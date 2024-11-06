@@ -1,11 +1,24 @@
 // Importar la función sum del archivo app.js
-const { sum } = require('./app.js');
+const { fromDollarToYen, fromEuroToDollar, fromYenToPound } = require('./app.js');
 
 // Comienza tu primera prueba
-test('adds 14 + 9 to equal 23', () => {
-    // Dentro de la prueba llamamos a nuestra función sum con 2 números
-    let total = sum(14, 9);
+test("Convierte 1 dolar a yenes", () => {
+    const result = fromDollarToYen(1); 
 
-    // Esperamos que la suma de esos 2 números sea 23
-    expect(total).toBe(23);
+    expect(result).toBeCloseTo(156.5);
+ 
+});
+
+test("Convierte 1 euro a dolares", () => {
+    const result = fromEuroToDollar(1); 
+
+    expect(result).toBeCloseTo(1.07);
+ 
+});
+
+test("Convierte 1 yen a libras", () => {
+    const result = fromYenToPound(1); 
+
+    expect(result).toBeCloseTo(0.87);
+ 
 });
